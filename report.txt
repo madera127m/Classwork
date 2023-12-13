@@ -1,0 +1,3 @@
+The graphs shows a negative correlation between displacement and acceleration.                          
+They are related in that greater engine displacement produces more power while less increases effiency.                          
+In this case the r squared score was about .2. This means that the data match is very good this might                           because of some outliers in the data .

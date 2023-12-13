@@ -50,17 +50,19 @@ fig.savefig('linear_regression.png')
 
 r_squared = lr.score(X_test, y_test)
 r_squared
+with open('scriptnotes.txt', 'w') as notes_file:
+        notes_file.write("Dataset Info:\n")
+        notes_file.write(str(df.info()) + '\n\n')
 
-with open('scriptnotes.txt', 'w') as report_file:
-        report_file.write("Dataset Info:\n")
-        report_file.write(str(df.info()) + '\n\n')
-
-        report_file.write("Summary Statistics:\n")
-        report_file.write(str(df.describe()) + '\n\n')
-
+        notes_file.write("Summary Statistics:\n")
+        notes_file.write(str(df.describe()) + '\n\n')
         r_squared = lr.score(X_test, y_test)
-        report_file.write(f"R-squared score from lr.score of the test data: {r_squared:.4f}\n")
-        report_file.write("The graphs show a negative correlation between displacement and acceleration.\
-                          \nThey are related in that greater engine displacement produces more power while less increases effiency")
-if name == 'main':
-        main()
+        notes_file.write(f"R-squared score from lr.score of the test data: {r_squared:.4f}\n")
+
+with open('report.txt', 'w') as report_file:
+       
+        report_file.write("The graphs shows a negative correlation between displacement and acceleration.\
+                          \nThey are related in that greater engine displacement produces more power while less increases effiency.\
+                          \nIn this case the r squared score was about .2. This means that the data match is very good this might \
+                          because of some outliers in the data .")
+
